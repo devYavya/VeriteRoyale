@@ -1,33 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
-
-import '../style/Sidebar.css'
+import '../style/Sidebar.css';
 
 const Sidebar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const Admintok = localStorage.getItem('admintoken');
   const Adminname = localStorage.getItem('LoggedInAdmin');
   const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = () => {
-    localStorage.removeItem("admintoken"); 
-    localStorage.removeItem("LoggedInAdmin");
-    console.log("logout"); 
-    window.location.reload();
+    localStorage.removeItem('admintoken');
+    localStorage.removeItem('LoggedInAdmin');
+    console.log('Logged out');
     navigate('/AdminLogin');
-  }
+  };
 
   useEffect(() => {
-    if(Admintok == null ){
-      navigate('/AdminLogin')
+    if (!Admintok) {
+      navigate('/AdminLogin');
     }
-  }, [])
+  }, [Admintok, navigate]); 
 
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  }
-
+  };
   return (
     <div className="sidebar">
       <div className="toggle-button" onClick={handleToggleMenu}>

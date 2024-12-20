@@ -3,7 +3,7 @@ import '../style/Home.css';
 import background from "../img/bg.mp4";
 
 function HomeMain() {
-    const [LoggedInUser, setLoggedInUSer] = useState('');
+    const [ setLoggedInUSer] = useState('');
     useEffect(()=>
     {
         setLoggedInUSer(localStorage.getItem(''))

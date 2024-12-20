@@ -8,7 +8,7 @@ import us from "../img/us.mp4";
 
 const NewArrivals = () => {
 
-  const tok = localStorage.getItem('token');
+  // const tok = localStorage.getItem('token');
 
   return (
     <div className="new-arrivals-container">

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../style/Cart.css';
 import { handleSuccess, handleError } from '../Utils';
@@ -11,26 +11,26 @@ const Cart = () => {
     const id = localStorage.getItem('userId');
     const navigate = useNavigate();
 
-    useEffect(() => {
-        fetchCartItems();
-    }, []);
-
-    const fetchCartItems = async () => {
+    const fetchCartItems = useCallback(async () => {
         try {
-            const response = await axios.get('http://localhost:8000/cart/getcart/'+id, {
+            const response = await axios.get(`http://localhost:8000/cart/getcart/${id}`, {
                 headers: {
-                    Authorization: `Bearer ${tok}`
-                }
+                    Authorization: `Bearer ${tok}`,
+                },
             });
             setCartItems(response.data);
             calculateTotal(response.data);
         } catch (error) {
             console.error('Error fetching cart items:', error);
         }
-    };
+    }, [id, tok]);
+
+    useEffect(() => {
+        fetchCartItems();
+    }, [fetchCartItems]);
 
     const calculateTotal = (items) => {
-        const sum = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+        const sum = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
         setTotal(sum);
     };
 
@@ -38,10 +38,10 @@ const Cart = () => {
         try {
             await axios.delete(`http://localhost:8000/cart/removeitem/${productId}`, {
                 headers: {
-                    Authorization: `Bearer ${tok}`
-                }
+                    Authorization: `Bearer ${tok}`,
+                },
             });
-            fetchCartItems();
+            fetchCartItems(); // Re-fetch cart items after removing an item
         } catch (error) {
             console.error('Error removing item:', error);
         }
@@ -50,8 +50,8 @@ const Cart = () => {
     const handleCheckout = async () => {
         try {
             handleSuccess('Redirecting to payment gateway...');
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            navigate("/Checkout");
+            await new Promise((resolve) => setTimeout(resolve, 2000));
+            navigate('/Checkout');
         } catch (error) {
             console.error('Checkout error:', error);
             handleError('An error occurred while processing your checkout. Please try again.');
@@ -67,7 +67,10 @@ const Cart = () => {
                 <>
                     {cartItems.map((item) => (
                         <div key={item.productId} className="cart-item">
-                            <img src={`http://localhost:8000/${item.imageUrl}`} alt={item.name} />
+                            <img
+                                src={`http://localhost:8000/${item.imageUrl}`}
+                                alt={item.name}
+                            />
                             <div className="item-details">
                                 <h3>{item.name}</h3>
                                 <p>Price: ₹{item.price}</p>
@@ -82,7 +85,12 @@ const Cart = () => {
                     ))}
                     <div className="cart-summary">
                         <h2>Total: ₹{total.toFixed(2)}</h2>
-                        <button onClick={handleCheckout} className="checkout-button">Proceed to Checkout</button>
+                        <button
+                            onClick={handleCheckout}
+                            className="checkout-button"
+                        >
+                            Proceed to Checkout
+                        </button>
                     </div>
                 </>
             )}

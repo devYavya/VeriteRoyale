@@ -5,7 +5,7 @@ import axios from 'axios';
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 import {toast} from "react-toastify";
 import Sidebar from "./Sidebar";
-import { FaTrash } from "react-icons/fa";
+// import { FaTrash } from "react-icons/fa";
 
 const ViewProduct = () => {
 

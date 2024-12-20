@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer } from 'react-toastify';
 import Sidebar from "./Sidebar";
-import { handleError, handleSuccess } from '../Utils';
+import { handleSuccess } from '../Utils';
 
 const Product = () => {
   const products = {

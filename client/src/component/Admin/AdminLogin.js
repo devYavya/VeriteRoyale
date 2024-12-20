@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Updated to use useNavigate
+import { useNavigate } from 'react-router-dom'; // Updated to use useNavigate
 import '../style/AdminLogin.css'; 
-import axios  from 'axios';
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../Utils';
 

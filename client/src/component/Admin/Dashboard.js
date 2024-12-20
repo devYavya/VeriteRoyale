@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from './Sidebar';
 import axios from 'axios';
 import '../style/Dashboard.css';
-import ViewProduct from './ViewProduct';
-import  getTotalProducts  from './PurchaseOrder';
+
 
 const Dashboard = () => {
   const [productsCount, setProductsCount] = useState(0);

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import '../style/Navbar.css';
 // import logo from '../img/logom.png'
-import perfume from '../img/perfume.png'
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import user from '../img/user.png';
 import { FaUserCheck } from "react-icons/fa";
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaUser ,Check } from "react-icons/fa";
+
 
 import '../style/Sidebar.css'
 

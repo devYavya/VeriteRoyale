@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 
 const PurchaseOrder = () => {
   const [orders, setOrders] = useState([]);
-  const tok = localStorage.getItem('token');
+  // const tok = localStorage.getItem('token');
 
   useEffect(() => {
     const fetchOrders = async () => {

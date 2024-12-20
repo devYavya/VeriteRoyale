@@ -35,7 +35,7 @@ const Fragrances = () => {
   
       const userId = localStorage.getItem('userId'); 
       // console.log(userId);
-      const response = await axios.post(
+       await axios.post(
         'http://localhost:8000/cart/addtocart',
         {
           userId, 

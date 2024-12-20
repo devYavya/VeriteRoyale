@@ -71,14 +71,14 @@
   background-color: rgb(121, 227, 121);
 }
 
-/* Alternating even and odd card layouts */
+ Alternating even and odd card layouts */
 .even {
   flex-direction: row;
 }
 
 .odd {
   flex-direction: row-reverse;
-} */
+} 
 
 .our-world {
   font-family: Arial, sans-serif;

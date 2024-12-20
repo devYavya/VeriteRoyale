@@ -1,0 +1,128 @@
+.stories-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: center;
+  overflow-y: scroll;
+  height: 90vh;
+}
+.stories-container {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.stories-container::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+.write-story-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 20px 0;
+  transition: background-color 0.3s;
+}
+
+.write-story-btn:hover {
+  background-color: #45a049;
+}
+
+.story-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.story-form input,
+.story-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.story-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.story-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.story-form button:hover {
+  background-color: #45a049;
+}
+
+.stories-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.story-bubble {
+  background-color: white;
+  background-image: url('../img/stories.png');
+    /* background-size: cover;*/
+    background-position: bottom;
+    background-repeat: no-repeat; 
+    
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 300px;
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s;
+}
+
+.story-bubble:hover {
+  transform: scale(1.05) !important;
+}
+
+.story-bubble h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.story-bubble p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.story-bubble .author {
+  display: block;
+  color: #888;
+  font-style: italic;
+  text-align: right;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

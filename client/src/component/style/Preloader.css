@@ -1,0 +1,35 @@
+.preloader{
+    height: 100vh;
+    width: 100%;
+   background-color: #000000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* position: fixed; */
+    /* bottom: 0;
+    left: 0;
+    right: 0; */
+    z-index: 65;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader .texts-container{
+    display: flex;
+    align-items: center;
+    font-family: cursive, Arial, Helvetica, sans-serif;
+    gap: 15px;
+    height: 60px;
+    width: 400px;
+    font-size: 40px;
+    font-weight: 800;
+    overflow: hidden;
+    color: #fff;
+}
+
+ .img{
+   height: 70px;
+   width: 50px;
+   top: 15px;
+}

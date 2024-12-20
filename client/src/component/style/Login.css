@@ -1,0 +1,139 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 86vh;
+}
+
+.auth-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 50px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-top: 0;
+  padding-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.auth-container span {
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+}
+
+/* a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+a:hover {
+  color: #23527c;
+} */
+
+.ToastContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.ToastContainer .toast {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ToastContainer .toast.success {
+  background-color: #4CAF50;
+}
+
+.ToastContainer .toast.error {
+  background-color: #f44336;
+}
+
+.register-redirect {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.register-redirect p {
+  margin-bottom: 10px;
+}
+
+.register-redirect button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-redirect button:hover {
+  background-color: #3e8e41;
+}

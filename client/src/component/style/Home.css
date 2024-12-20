@@ -1,0 +1,140 @@
+.home {
+    font-family: Arial, sans-serif;
+    background-color: black;
+  }
+  .home a{
+      margin-left: 20px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 20px;
+  }
+  
+  .home-header {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .home-header h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .home-header p {
+    font-size: 18px;
+    color: #666;
+  }
+  #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  
+  .login-link {
+      /* margin-left: 20px; */
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .login-link:hover {
+      color: #ccc;
+    }
+    
+    .fas.fa-user {
+      font-size: 18px;
+      /* margin-right: 10px; */
+    }
+    .Content {
+      position: absolute;
+      top: 50%;
+      left: 60px;
+      color: antiquewhite;
+      transform: translateY(-50%);
+      text-align: left;
+  
+    }
+  
+    .Content h1{
+      font-size: 50px;
+      font-family: "Gowun Batang", serif;
+      font-weight: 1;
+      color: antiquewhite;
+    }
+  
+  
+  .watch-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: black;
+      align-items: center;
+      padding: 60px;
+      color: #ccc;
+      margin-top: 39.5%;
+    }
+    
+    .watch-image {
+      
+      margin: 20px;
+    }
+    
+    .watch-image img {
+      
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    
+    .watch-description {
+      flex-basis: 50%;
+      margin: 20px;
+      color: #ccc;
+    }
+    
+    .watch-description h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .watch-description p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .watch-section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  
+    .watch-section:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  
+    .watch-image img {
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .watch-image img:hover {
+      transform: scale(1.05);
+    }
+  
+    .watch-description h2 {
+      font-family: "Gowun Batang", serif;
+      color: #ccc;
+    }
+  
+    .watch-description p {
+      color: #666;
+      line-height: 1.6;
+    }
+  
+    @media (max-width: 768px) {
+      .watch-section {
+        flex-direction: column;
+      }
+  
+      .watch-image, .watch-description {
+        flex-basis: 100%;
+      }
+    }

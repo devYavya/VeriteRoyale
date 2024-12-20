@@ -1,0 +1,108 @@
+.addProduct {
+   width: 30%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-left:30%;
+  margin-top:1%;
+  overflow: auto;
+  height: 90vh;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+}
+
+.addProduct h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.addproductform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.inputGroupe {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.inputGroupe label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.inputGroupe input, .inputGroupe textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.inputGroupe input:hover, .inputGroupe textarea:hover {
+  border: 1px solid #ccc;
+}
+
+.inputGroupe input:focus, .inputGroupe textarea:focus {
+  border: 1px solid #4CAF50;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#btn button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#btn button:hover {
+  background-color: #3e8e41;
+}
+
+.ToastContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.ToastContainer .toast {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ToastContainer .toast.success {
+  background-color: #4CAF50;
+}
+
+.ToastContainer .toast.error {
+  background-color: #f44336;
+}
+
+/* Add responsive styles for screen sizes under 700px */
+@media only screen and (max-width: 700px) {
+    
+  .addProduct {
+    padding: 10px;
+  }
+  
+  .addproductform {
+    padding: 10px;
+  }
+  
+  .inputGroupe {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,114 @@
+
+.main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: #ddd;
+    
+    color: #333;
+    /* height: 100vh; */
+  }
+.ProductTable h1{
+  text-align: center;
+  color: #333;
+  padding-bottom: 20px;
+}
+
+.ProductTable {
+  position:relative;
+  width: 80%;
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4CAF50;
+  color: #fff;
+  font-weight: bold;
+}
+
+td {
+  font-size: 16px;
+}
+
+td img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.button-link {
+  text-decoration: none;
+  color: #4CAF50;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.button-link:hover {
+  color: #3e8e41;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+.fa-pen-to-square, .fa-trash {
+  font-size: 18px;
+  margin: 0 5px;
+}
+
+.fa-pen-to-square:hover, .fa-trash:hover {
+  color: #3e8e41;
+}
+
+/* Add responsive styles for screen sizes under 700px */
+@media only screen and (max-width: 700px) {
+  table {
+    font-size: 14px;
+  }
+  
+  th, td {
+    padding: 10px;
+  }
+  
+  td img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .button-link {
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 8px 16px;
+  }
+}

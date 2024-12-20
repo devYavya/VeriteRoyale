@@ -1,0 +1,133 @@
+.new-arrivals-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-Y: scroll;
+  overflow-x: hidden;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+ .arrivals-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}/*
+
+.arrival-card {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.arrival-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.product-details {
+  padding: 0 20px;
+  flex: 1;
+}
+
+.product-details h2 {
+  font-size: 22px;
+}
+
+.product-details p {
+  font-size: 16px;
+  color: #333;
+}
+
+.cart-icon-button {
+  background-color: #4D4855;
+  color: cornsilk;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cart-icon-button:hover {
+  background-color: rgb(121, 227, 121);
+}
+
+/* Alternating even and odd card layouts */
+.even {
+  flex-direction: row;
+}
+
+.odd {
+  flex-direction: row-reverse;
+} */
+
+.our-world {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  /* margin: auto; */
+  /* width: 80%; */
+  margin-left: 20%;
+  justify-content: center;
+}
+
+.intro, .production, .nature, .video {
+  margin-bottom: 40px;
+  padding: 20px;
+  margin-left: 10%;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background:linear-gradient(to right, #000000,#000000);
+    color: #ccc;
+
+}
+
+.our-world h1, h2 {
+  color: #ccc;
+}
+
+.our-world p {
+  color: #ccc;
+}
+
+.our-world .video {
+  text-align: center;
+}
+
+.our-world iframe {
+  border: none;
+  border-radius: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .arrival-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .product-image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

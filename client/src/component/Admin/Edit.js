@@ -24,7 +24,7 @@ const Edit = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/getOne/${id}`);
+        const response = await axios.get(`https://veriteroyale.onrender.com/api/getOne/${id}`);
         setProduct(response.data);
       } catch (error) {
         console.log(error);
@@ -57,7 +57,7 @@ const Edit = () => {
     form.append("discount", product.discount);
 
     try {
-      await axios.put(`http://localhost:8000/api/update/${id}`, product);
+      await axios.put(`https://veriteroyale.onrender.com/api/update/${id}`, product);
       handleSuccess({msg:"Product Updated Successfully!!.."});
       navigate("/ViewProduct");
     } catch (error) {

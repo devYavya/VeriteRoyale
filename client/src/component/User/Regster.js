@@ -34,7 +34,7 @@ function Register ()  {
         
               
         try {
-          const url = "http://localhost:8000/auth/regster";
+          const url = "https://veriteroyale.onrender.com/auth/regster";
           const response = await fetch(url, {
             method:"POST",
             headers:

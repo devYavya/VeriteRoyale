@@ -34,7 +34,7 @@ function Login ()  {
         
               
         try {
-          const url = "http://localhost:8000/auth/Login";
+          const url = "https://veriteroyale.onrender.com/auth/Login";
           const response = await fetch(url, {
             method:"POST",
             headers:

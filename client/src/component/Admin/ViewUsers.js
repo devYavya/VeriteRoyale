@@ -10,7 +10,7 @@ const ViewUsers = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:8000/auth/getUsers');
+      const response = await axios.get('https://veriteroyale.onrender.com/auth/getUsers');
       console.log(response.data); // Add this line
       setUsers(response.data.users);
     }
@@ -19,7 +19,7 @@ const ViewUsers = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/auth/deleteUser /${id}`);
+      await axios.delete(`https://veriteroyale.onrender.com/auth/deleteUser /${id}`);
       setUsers(users.filter((user) => user._id !== id));
       toast.success("User  deleted successfully");
     } catch (error) {

@@ -13,7 +13,7 @@ const CustomeProduct = () => {
 
   const fetchCustomPerfumes = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/custom/customperfumes');
+      const response = await axios.get('https://veriteroyale.onrender.com/custom/customperfumes');
       console.log(response.data.data)
       setCustomPerfumes(response.data.data);
     } catch (error) {

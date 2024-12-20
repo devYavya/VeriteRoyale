@@ -26,7 +26,7 @@ const Checkout = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:8000/cart/getcart/${userId}`, {
+        const { data } = await axios.get(`https://veriteroyale.onrender.com/cart/getcart/${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setCartItems(data);
@@ -62,7 +62,7 @@ const Checkout = () => {
     };
 
     try {
-      const { data } = await axios.post('http://localhost:8000/orders/create', orderData, {
+      const { data } = await axios.post('https://veriteroyale.onrender.com/orders/create', orderData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -157,7 +157,7 @@ const Checkout = () => {
           <div className="cart-items">
             {cartItems.map((item) => (
               <div key={item.productId} className="cart-item">
-                <img src={`http://localhost:8000/${item.imageUrl}`} alt={item.name} />
+                <img src={`https://veriteroyale.onrender.com/${item.imageUrl}`} alt={item.name} />
                 <div className="item-details">
                   <h4>{item.name}</h4>
                   <p>Quantity: {item.quantity}</p>

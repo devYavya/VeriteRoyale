@@ -16,7 +16,7 @@ const Stories = () => {
 
   const fetchStories = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/stories/getAll');
+      const response = await axios.get('https://veriteroyale.onrender.com/stories/getAll');
       setStories(response.data);
     } catch (error) {
       console.error('Error fetching stories:', error);
@@ -26,7 +26,7 @@ const Stories = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8000/stories/createstories', newStory);
+      await axios.post('https://veriteroyale.onrender.com/stories/createstories', newStory);
       setNewStory({ name: '', feedback: ''});
       setShowForm(false);
       fetchStories();

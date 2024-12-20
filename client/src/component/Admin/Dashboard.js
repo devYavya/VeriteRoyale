@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [Order, setTotalOrders] = useState(0);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/api/productcount")
+    axios.get("https://veriteroyale.onrender.com/api/productcount")
       .then(response => {
         setProductsCount(response.data.count);
         console.log('Products count:', response.data.count);
@@ -22,7 +22,7 @@ const Dashboard = () => {
         console.error(error);
       });
 
-      axios.get("http://localhost:8000/api/totalprice")
+      axios.get("https://veriteroyale.onrender.com/api/totalprice")
       .then(response => {
         setTotalPrice(response.data.totalValue);
         console.log('Total Value:', response.data.totalValue);
@@ -32,7 +32,7 @@ const Dashboard = () => {
       });
 
 
-      axios.get("http://localhost:8000/api/totalstocks")
+      axios.get("https://veriteroyale.onrender.com/api/totalstocks")
       .then(response => {
         setStock(response.data.totalStocks);
         console.log('Total Value:', response.data.totalStocks);
@@ -42,7 +42,7 @@ const Dashboard = () => {
       });
       
 
-    axios.get("http://localhost:8000/auth/usersCount")
+    axios.get("https://veriteroyale.onrender.com/auth/usersCount")
       .then(response => {
         setUsersCount(response.data.count);
       })
@@ -51,7 +51,7 @@ const Dashboard = () => {
       });
 
 
-      axios.get("http://localhost:8000/orders/countOrders")
+      axios.get("https://veriteroyale.onrender.com/orders/countOrders")
       .then(response => {
         setTotalOrders(response.data.count);
         console.log('Orders count:', response.data.count);
@@ -61,7 +61,7 @@ const Dashboard = () => {
       });
 
 
-      axios.get(" http://localhost:8000/orders/getTotalOrdersPrice")
+      axios.get("https://veriteroyale.onrender.com/orders/getTotalOrdersPrice")
       .then(response => {
         setSale(response.data.totalPrice);
         console.log('Total Value:', response.data.totalPrice);

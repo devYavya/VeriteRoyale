@@ -33,7 +33,7 @@ function Adminlogin ()  {
         
               
         try {
-          const url = "http://localhost:8000/auth/adminLogin";
+          const url = "https://veriteroyale.onrender.com/auth/adminLogin";
           const response = await fetch(url, {
             method:"POST",
             headers:

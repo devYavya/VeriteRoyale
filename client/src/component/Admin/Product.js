@@ -41,7 +41,7 @@ const Product = () => {
     form.append("discount", product.discount);
 
     e.preventDefault();
-    await axios.post("http://localhost:8000/api/create", form)
+    await axios.post("https://veriteroyale.onrender.com/api/create", form)
       .then((response) => {
         handleSuccess({msg:"Product Added Successfully!!.."});
         window.location.reload(true);

@@ -16,7 +16,7 @@ const Fragrances = () => {
     const fetchFragrances = async () => {
       try {
 
-        const response = await axios.get('http://localhost:8000/api/getAll');
+        const response = await axios.get('https://veriteroyale.onrender.com/api/getAll');
         setFragrances(response.data);
       } catch (error) {
         handleError('OOPS!! Something went Wrong....');
@@ -36,7 +36,7 @@ const Fragrances = () => {
       const userId = localStorage.getItem('userId'); 
       // console.log(userId);
        await axios.post(
-        'http://localhost:8000/cart/addtocart',
+        'https://veriteroyale.onrender.com/cart/addtocart',
         {
           userId, 
           productId: product._id,
@@ -64,7 +64,7 @@ const Fragrances = () => {
         {fragrances.map((fragrance) => (
           <div key={fragrance.id} className="fragrance-card">
             <img
-              src={`http://localhost:8000/${fragrance.imageUrl}`}
+              src={`https://veriteroyale.onrender.com/${fragrance.imageUrl}`}
               alt={fragrance.name}
             />
             <h2>{fragrance.name}</h2>

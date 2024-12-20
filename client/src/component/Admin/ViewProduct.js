@@ -13,7 +13,7 @@ const ViewProduct = () => {
   useEffect(()=>{
     const fetchData= async()=>
     {
-      const response = await axios.get("http://localhost:8000/api/getAll")
+      const response = await axios.get("https://veriteroyale.onrender.com/api/getAll")
       setProducts(response.data);
     }
 
@@ -23,7 +23,7 @@ const ViewProduct = () => {
 
   const deleteProduct = async(productID) =>
   {
-    await axios.delete(`http://localhost:8000/api/deleteProduct/${productID}`)
+    await axios.delete(`https://veriteroyale.onrender.com/api/deleteProduct/${productID}`)
     .then((response)=>{
       setProducts((preProduct)=>preProduct.filter((product)=>ViewProduct._id!==productID))
       toast.success("Product Deleted successfully!", { position: "top-left" });
@@ -66,7 +66,7 @@ const ViewProduct = () => {
                       <td>{product.price}</td>
                        <td>{product.stock}</td>
                        <td>{product.description}</td>
-                       <td><img src={`http://localhost:8000/${product.imageUrl}`} alt={product.name} /></td>
+                       <td><img src={`https://veriteroyale.onrender.com/${product.imageUrl}`} alt={product.name} /></td>
                         <td>
                          <Link to={`/edit/`+product._id} className="button-link">Update</Link>
                          <button  onClick={()=>deleteProduct(product._id)}>

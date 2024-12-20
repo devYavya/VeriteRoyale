@@ -13,7 +13,7 @@ const Cart = () => {
 
     const fetchCartItems = useCallback(async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/cart/getcart/${id}`, {
+            const response = await axios.get(`https://veriteroyale.onrender.com/cart/getcart/${id}`, {
                 headers: {
                     Authorization: `Bearer ${tok}`,
                 },
@@ -36,7 +36,7 @@ const Cart = () => {
 
     const removeItem = async (productId) => {
         try {
-            await axios.delete(`http://localhost:8000/cart/removeitem/${productId}`, {
+            await axios.delete(`https://veriteroyale.onrender.com/cart/removeitem/${productId}`, {
                 headers: {
                     Authorization: `Bearer ${tok}`,
                 },
@@ -68,7 +68,7 @@ const Cart = () => {
                     {cartItems.map((item) => (
                         <div key={item.productId} className="cart-item">
                             <img
-                                src={`http://localhost:8000/${item.imageUrl}`}
+                                src={`https://veriteroyale.onrender.com/${item.imageUrl}`}
                                 alt={item.name}
                             />
                             <div className="item-details">

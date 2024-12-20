@@ -14,7 +14,7 @@ const ViewFeedback = () => {
 
   const fetchFeedback = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/stories/getAll');
+      const response = await axios.get('https://veriteroyale.onrender.com/stories/getAll');
       setFeedback(response.data);
     } catch (error) {
       console.error('Error fetching feedback:', error);
@@ -24,7 +24,7 @@ const ViewFeedback = () => {
 
   const deleteFeedback = async (feedbackId) => {
     try {
-      await axios.delete(`http://localhost:8000/stories/deleteStory/${feedbackId}`);
+      await axios.delete(`https://veriteroyale.onrender.com/stories/deleteStory/${feedbackId}`);
       setFeedback(prevFeedback => prevFeedback.filter(item => item._id !== feedbackId));
       toast.success("Feedback deleted successfully!", { position: "top-left" });
     } catch (error) {

@@ -95,7 +95,7 @@ const Services = () => {
             return;
         }
         console.log(formData);
-      await axios.post('http://localhost:8000/custom/customperfume', {
+      await axios.post('https://veriteroyale.onrender.com/custom/customperfume', {
         ...formData,
         totalPrice
       },

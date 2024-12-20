@@ -10,7 +10,7 @@ const PurchaseOrder = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/orders/getAllOrders");
+        const response = await axios.get("https://veriteroyale.onrender.com/orders/getAllOrders");
         console.log(response.data);
         setOrders(response.data);
       } catch (error) {

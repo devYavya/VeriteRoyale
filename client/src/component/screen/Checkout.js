@@ -66,7 +66,7 @@ const Checkout = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      if (data.success) {
+      if (data.sucess) {
         handleSuccess('Order placed successfully!');
         navigate('/');
       } else {

@@ -50,7 +50,7 @@ const signup = async(req,res)=>
             Royale Verite Team
         `;
         sendMail(email,"Welcome to the Royale Verite Family!", emailContent)
-        console.log(userModel.email,userModel._id);
+        
         const jwttoken = jwt.sign({email: userModel.email, _id: userModel._id},
             process.env.JWTPRIVATEKEY,
             {expiresIn:'24h'}

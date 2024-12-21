@@ -48,7 +48,6 @@ function Register ()  {
           });
           const result = await response.json();
           const {sucess, message,jwttoken, name,error,userId} = result;
-          console.log(name,jwttoken,userId);
 
           if(sucess)
           {

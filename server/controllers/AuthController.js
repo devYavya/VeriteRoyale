@@ -50,6 +50,7 @@ const signup = async(req,res)=>
             Royale Verite Team
         `;
         sendMail(email,"Welcome to the Royale Verite Family!", emailContent)
+        console.log(userModel.email,userModel._id);
         const jwttoken = jwt.sign({email: userModel.email, _id: userModel._id},
             process.env.JWTPRIVATEKEY,
             {expiresIn:'24h'}
@@ -61,11 +62,12 @@ const signup = async(req,res)=>
         sucess: true,
         jwttoken,
         email,
-        name:user.name,
-        userId:user._id
+        name:userModel.name,
+        userId:userModel._id
         })
         
     } catch (error) {
+        console.log(error);
         res.status(500)
         .json({message: "OOPS! something went Wrong", 
             sucess: false})

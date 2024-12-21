@@ -3,7 +3,21 @@
   margin: 0 auto;
   padding: 40px 20px;
 }
+.services-content{
+  flex-direction: row;
+  display: flex;
+  gap: 40px;
+}
 
+.services-content {
+  
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.services-content::-webkit-scrollbar { 
+  display: none; /* Safari and Chrome */
+}
 .form-section {
   flex: 1;
   min-width: 300px;
@@ -82,19 +96,7 @@
 }
 
 
-.services-content {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  gap: 40px;
-  overflow-y: auto; /* Enable vertical scrolling */
-  max-height: 80vh; /* Adjust to control the scrollable height */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
-}
 
-.services-content::-webkit-scrollbar { 
-  display: none; /* Safari and Chrome */
-}
 
 @media (max-width: 768px) {
   .services-content {

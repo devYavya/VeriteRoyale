@@ -4,13 +4,6 @@
   padding: 40px 20px;
 }
 
-.services-content {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-
 .form-section {
   flex: 1;
   min-width: 300px;
@@ -45,12 +38,13 @@
   min-width: 300px;
   background-color: #f9f9f9;
   padding: 30px;
+  
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   background-image: url('../img/stories.png');
   /* background-size: cover;*/
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
 }
 
 .selections-summary {
@@ -87,13 +81,31 @@
   background-color: #45a049;
 }
 
+
+.services-content {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 40px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 80vh; /* Adjust to control the scrollable height */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.services-content::-webkit-scrollbar { 
+  display: none; /* Safari and Chrome */
+}
+
 @media (max-width: 768px) {
   .services-content {
-    flex-direction: column;
+    flex-direction: column; /* Stack vertically for smaller screens */
+    overflow-y: auto; /* Ensure vertical scrolling */
+    max-height: 80vh; /* Adjust as needed */
   }
-  
   .form-section,
   .price-summary {
-    width: 100%;
+    width: 100%; /* Full width on smaller screens */
   }
 }
+
+

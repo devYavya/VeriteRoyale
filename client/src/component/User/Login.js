@@ -108,7 +108,7 @@ function Login ()  {
                 <span> Wanna Join us ?
                     <Link to="/Regster">Register</Link>
                 </span>
-
+                <span><Link to="/AdminLogin">Admin</Link></span>
             </form>
             <ToastContainer/>
         </div>

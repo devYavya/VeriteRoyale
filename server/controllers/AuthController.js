@@ -36,7 +36,7 @@ const signup = async(req,res)=>
 
                 To help you dive into our luxurious offerings, we recommend checking out:
 
-                    Our Bestsellers: Discover the fragrances that our customers adore. [Link to bestsellers]
+                    Our Bestsellers: Discover the fragrances that our customers adore. https://veriteroyale.netlify.app/Fragrances
                     Fragrance Guide: Learn about different scent families and find your perfect match. [Link to guide]
                     Join Our Community: Connect with fellow fragrance enthusiasts on our social media platforms. [Links to social media]
 

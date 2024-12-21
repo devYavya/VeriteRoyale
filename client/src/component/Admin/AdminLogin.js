@@ -17,7 +17,6 @@ function Adminlogin ()  {
     const handleChange = (e) =>
     {
         const {name, value} = e.target;
-        console.log(name, value);
          const copyData = {...data};
          copyData[name] = value;
         setData(copyData);

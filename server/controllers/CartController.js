@@ -164,7 +164,7 @@ const create = async(req, res) =>
     }
     catch(error){
         console.error('Error removing item from cart:', error);
-        res.status(500).json({ msg: "Server error", error: error.message });
+        res.status(500).json({ msg: "Server error", error: error.message }); 
     }
 }
 

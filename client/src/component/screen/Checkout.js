@@ -79,7 +79,27 @@ const Checkout = () => {
 
   return (
     <div className="checkout-container">
+      <div className="order-summary">
+          <h3>Order Summary</h3>
+          <div className="cart-items">
+            {cartItems.map((item) => (
+              <div key={item.productId} className="cart-item">
+                <img src={`https://veriteroyale.onrender.com/${item.imageUrl}`} alt={item.name} />
+                <div className="item-details">
+                  <h4>{item.name}</h4>
+                  <p>Quantity: {item.quantity}</p>
+                  <p>Price: ₹{item.price * item.quantity}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="total">
+            <h4>Total Amount: ₹{totalAmount.toFixed(2)}</h4>
+          </div>
+        </div>
+        
       <h2>Checkout</h2>
+      
       <div className="checkout-content">
         <div className="billing-section">
           <h3>Billing Details</h3>
@@ -151,24 +171,6 @@ const Checkout = () => {
               Place Order (₹{totalAmount.toFixed(2)})
             </button>
           </form>
-        </div>
-        <div className="order-summary">
-          <h3>Order Summary</h3>
-          <div className="cart-items">
-            {cartItems.map((item) => (
-              <div key={item.productId} className="cart-item">
-                <img src={`https://veriteroyale.onrender.com/${item.imageUrl}`} alt={item.name} />
-                <div className="item-details">
-                  <h4>{item.name}</h4>
-                  <p>Quantity: {item.quantity}</p>
-                  <p>Price: ₹{item.price * item.quantity}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="total">
-            <h4>Total Amount: ₹{totalAmount.toFixed(2)}</h4>
-          </div>
         </div>
       </div>
       <ToastContainer />

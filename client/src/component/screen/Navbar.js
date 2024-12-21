@@ -11,7 +11,7 @@ const NavBar = () => {
   const Uname = localStorage.getItem('LoggedInUser');
   const navigate = useNavigate();
   const handleToggleMenu = () => {
-    setShowNavLinks(!showNavLinks);
+    setShowNavLinks(prev => !prev);
   };
   const handleLogout = ()=>{
     localStorage.removeItem("token");
@@ -27,7 +27,10 @@ const NavBar = () => {
   return (
     <nav className="nav-bar">
       <div className="hamburger-menu">
-        <div className="hamburger-icon" onClick={handleToggleMenu}>
+        <div className="hamburger-icon" 
+        onClick={handleToggleMenu} 
+        aria-expanded = {showNavLinks} 
+        aria-label="Toggle menu">
           <span></span>
           <span></span>
           <span></span>

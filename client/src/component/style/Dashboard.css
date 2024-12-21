@@ -4,8 +4,18 @@
   height: 100vh;
   background-color: #ddd;
   color: #333;
+  overflow-y: scroll;
 }
-.dashboard h1{
+
+.dashboard {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.dashboard::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+.dashboard h1 {
   color: black;
   text-align: center;
 }
@@ -29,6 +39,12 @@
   margin: 20px;
   padding: 20px;
   width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card h2 {
@@ -43,15 +59,12 @@
   color: #333;
 }
 
-/* Responsive design */
-
 @media (max-width: 768px) {
-  .dashboard {
-    flex-direction: column;
+  .dashboard h1 {
+    font-size: 20px;
+    margin: 10px 0;
   }
-  .dashboard h1{
-    font-size: 16px;
-  }
+
   .main-content {
     padding: 10px;
   }
@@ -63,6 +76,35 @@
 
   .card {
     margin: 10px;
-    width: 100%;
+    width: 90%;
+  }
+
+  .card h2 {
+    font-size: 14px;
+  }
+
+  .card p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard h1 {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .card {
+    margin: 10px 5px;
+    padding: 15px;
+    width: 95%;
+  }
+
+  .card h2 {
+    font-size: 12px;
+  }
+
+  .card p {
+    font-size: 16px;
   }
 }

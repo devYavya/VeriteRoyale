@@ -47,8 +47,8 @@ function Register ()  {
             // validateStatus: (status) => status >= 200 && status < 600, // catch all errors
           });
           const result = await response.json();
-        //   const {sucess, message, error} = result;
           const {sucess, message,jwttoken, name,error,userId} = result;
+          console.log(name,jwttoken,userId);
 
           if(sucess)
           {

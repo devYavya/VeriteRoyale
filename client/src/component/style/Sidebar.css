@@ -33,7 +33,7 @@
 .sidebar a:hover {
   color: #00698f;
 }
-.nav-links {
+.side-nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -41,7 +41,7 @@
   margin: 0;
   padding: 0;
 }
-.nav-links li {
+.side-nav li {
   padding: 10px;
   text-decoration: none;
 }
@@ -73,11 +73,11 @@
     width: 100%;
     padding: 10px;
   }
-  .nav-links li {
+  .side-nav li {
     padding: 10px;
     text-decoration: none;
   }
-  .nav-links {
+  .side-nav {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -87,18 +87,12 @@
     /* width: 100%; */
     /* padding: 20px; */
   }
-  #right
-  {
-    margin-top: 150px;
-    padding: 0px;
-  }
-  .nav-links li {
+  
+  .side-nav li {
     margin-right: 0;
     margin-bottom: 10px;
   }
-  .logo {
-    margin: 20px 0;
-  }
+ 
   .hamburger-menu {
     display: block;
   }
@@ -110,6 +104,6 @@
   
 }
 
-.show-nav-links {
+.show-Menu {
   display: flex;
 }

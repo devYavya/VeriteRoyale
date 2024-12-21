@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../style/Sidebar.css';
 
 const Sidebar = () => {
-  const [showNavLinks, setShowNavLinks] = useState(false);
+  const [showMenu, setMenu] = useState(false);
   const Admintok = localStorage.getItem('admintoken');
   const Adminname = localStorage.getItem('LoggedInAdmin');
   const navigate = useNavigate();
-  const handleToggleMenu = () => {
-    setShowNavLinks(!showNavLinks);
+  const handleMenu = () => {
+    setMenu(!showMenu);
   };
 
   const handleLogout = () => {
@@ -27,13 +27,13 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="hamburger-menu">
-        <div className="hamburger-icon" onClick={handleToggleMenu}>
+        <div className="hamburger-icon" onClick={handleMenu}>
           <span></span>
           <span></span>
           <span></span>
         </div>
       </div>
-      <ul className={`nav-links ${showNavLinks ? 'show-nav-links' : ''}`}>
+      <ul className={`side-nav ${showMenu? 'show-Menu' : ''}`}>
         <li>
           {Admintok == null ? ""
             // navigate('/AdminLogin')

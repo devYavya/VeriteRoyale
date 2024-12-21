@@ -1,70 +1,115 @@
 .dashboard {
-    display: flex;
-    flex-direction: row;
-  }
-  
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar li:last-child {
+  border-bottom: none;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar a:hover {
+  color: #00698f;
+}
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li {
+  padding: 10px;
+  text-decoration: none;
+}
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-icon {
+  cursor: pointer;
+}
+.hamburger-icon span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+.menu-open {
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
   .sidebar {
-    width: 200px;
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-right: 1px solid #ccc;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar li {
+    width: 100%;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
   }
-  
-  .sidebar li:last-child {
-    border-bottom: none;
-  }
-  
-  .sidebar a {
+  .nav-links li {
+    padding: 10px;
     text-decoration: none;
-    color: #333;
   }
-  
-  .sidebar a:hover {
-    color: #00698f;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    /* backdrop-filter: blur(15px); */
+    /* width: 100%; */
+    /* padding: 20px; */
   }
-  
-  .main-content {
-    flex: 1;
-    padding: 20px;
+  #right
+  {
+    margin-top: 150px;
+    padding: 0px;
   }
-  .menu-open {
+  .nav-links li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .logo {
+    margin: 20px 0;
+  }
+  .hamburger-menu {
     display: block;
   }
-  
-  @media only screen and (max-width: 768px) {
-    .sidebar {
-      width: 100%;
-      padding: 10px;
-    }
-    .toggle-button {
-      display: block;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 1;
-    }
-    .menu-open {
-      display: block;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      width: 100%;
-      background-color: #f0f0f0;
-      padding: 10px;
-    }
-    .menu-open li {
-      display: block;
-      margin-bottom: 10px;
-    }
+  .hamburger-icon {
+    position: absolute;
+    top: 50px;
+    left: 20px;
   }
+  
+}
+
+.show-nav-links {
+  display: flex;
+}

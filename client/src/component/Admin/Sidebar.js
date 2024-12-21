@@ -3,15 +3,18 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../style/Sidebar.css';
 
 const Sidebar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showNavLinks, setShowNavLinks] = useState(false);
   const Admintok = localStorage.getItem('admintoken');
   const Adminname = localStorage.getItem('LoggedInAdmin');
   const navigate = useNavigate();
+  const handleToggleMenu = () => {
+    setShowNavLinks(!showNavLinks);
+  };
 
   const handleLogout = () => {
     localStorage.removeItem('admintoken');
     localStorage.removeItem('LoggedInAdmin');
-    console.log('Logged out');
+    // console.log('Logged out');
     navigate('/AdminLogin');
   };
 
@@ -21,15 +24,16 @@ const Sidebar = () => {
     }
   }, [Admintok, navigate]); 
 
-  const handleToggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
   return (
     <div className="sidebar">
-      <div className="toggle-button" onClick={handleToggleMenu}>
-        <i className="fas fa-bars"></i>
+      <div className="hamburger-menu">
+        <div className="hamburger-icon" onClick={handleToggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <ul className={isMenuOpen ? "menu-open" : ""}>
+      <ul className={`nav-links ${showNavLinks ? 'show-nav-links' : ''}`}>
         <li>
           {Admintok == null ? ""
             // navigate('/AdminLogin')

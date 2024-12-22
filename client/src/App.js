@@ -55,7 +55,7 @@ function RouteWrapper() {
          <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/regster" element={<Regster />} />
-        <Route path="/reset-password:token" element={<ResetPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
 
         {user && <Route path="/HomeMain" element={<HomeMain/>}/>}
         <Route path="/OurWorld" element={<OurWorld/>}/>

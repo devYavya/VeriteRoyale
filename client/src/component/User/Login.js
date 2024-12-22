@@ -78,30 +78,36 @@ function Login ()  {
         }
       };
 
-      const handlePasswordReset = async () => {
-        try {
-          const email = data.email;
-          if (!email) return;
-      
-          const response = await fetch('https://veriteroyale.onrender.com/auth/reset-password', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email }),
-          });
-      
-          if (response.ok) {
-            alert('Password reset instructions have been sent to your email.');
-          } else {
-            const errorData = await response.json();
-            handleError(`Error: ${errorData.message}`);
-          }
-        } catch (error) {
-          handleError('Error initiating password reset:', error);
-          handleError('Something went wrong. Please try again.');
+    const handlePasswordReset = async (e) => {
+        e.preventDefault();
+        const email = data.email;
+        if (!email) {
+            return handleError('Please enter your email address');
         }
-      };
+
+        try {
+            const url = "https://veriteroyale.onrender.com/auth/reset-password";
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({email})
+            });
+
+            const result = await response.json();
+            const { success, message } = result;
+
+            if (success) {
+                handleSuccess("Password reset link has been sent to your email");
+            } else {
+                handleError(message || "Failed to send reset link");
+            }
+
+        } catch (err) {
+            handleError("Something went wrong. Please try again later.");
+        }
+    };
       
     
     return (

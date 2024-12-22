@@ -78,6 +78,31 @@ function Login ()  {
         }
       };
 
+      const handlePasswordReset = async () => {
+        try {
+          const email = data.email;
+          if (!email) return;
+      
+          const response = await fetch('https://veriteroyale.onrender.com/auth/reset-password', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+          });
+      
+          if (response.ok) {
+            alert('Password reset instructions have been sent to your email.');
+          } else {
+            const errorData = await response.json();
+            alert(`Error: ${errorData.message}`);
+          }
+        } catch (error) {
+          console.error('Error initiating password reset:', error);
+          alert('Something went wrong. Please try again.');
+        }
+      };
+      
     
     return (
         <div className="auth-container">
@@ -105,6 +130,8 @@ function Login ()  {
                 </div>
                
                 <button type="submit" >Login</button>
+                <button className="reset-password-button" onClick={handlePasswordReset}> Reset Password </button>
+
                 <span> Wanna Join us ?
                     <Link to="/Regster">Register</Link>
                 </span>

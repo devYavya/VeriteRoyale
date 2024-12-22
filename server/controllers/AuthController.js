@@ -118,6 +118,67 @@ const login = async(req,res)=>
             
         }
     }
+
+    const resetPassword = async (req, res) => {
+        try {
+            const { email } = req.body;
+            const user = await UserModel.findOne({ email });
+
+            if (!user) {
+                return res.status(404).json({
+                    message: "User with this email does not exist",
+                    success: false
+                });
+            }
+            const resetToken = jwt.sign(
+                { userId: user._id },
+                process.env.JWTPRIVATEKEY,
+                { expiresIn: '1h' }
+            );
+
+            
+            user.resetPasswordToken = resetToken;
+            user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+            await user.save();
+
+            const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
+
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.EMAIL_USERNAME,
+                    pass: process.env.EMAIL_PASSWORD
+                }
+            });
+
+            const mailOptions = {
+                from: process.env.EMAIL_USERNAME,
+                to: email,
+                subject: 'Password Reset Link',
+                html: `
+                    <h1>Password Reset Request</h1>
+                    <p>Please click on the following link to reset your password:</p>
+                    <a href="${resetUrl}">${resetUrl}</a>
+                    <p>This link will expire in 1 hour.</p>
+                    <p>If you did not request this, please ignore this email.</p>
+                `
+            };
+
+            await transporter.sendMail(mailOptions);
+
+            res.status(200).json({
+                message: "Password reset link sent to email",
+                success: true
+            });
+
+        } catch (error) {
+            res.status(500).json({
+                message: "Error sending password reset email",
+                success: false
+            });
+        }
+    }
+
     const getUsers = async (req, res) => {
         try {
           const users = await UserModel.find().select('-password');
@@ -200,5 +261,6 @@ module.exports={
     getUsers,
     usersCount,
     adminLogin,
-    deleteuser
+    deleteuser,
+    resetPassword
 }

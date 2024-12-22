@@ -23,12 +23,12 @@ const ResetPassword = () => {
 
     setLoading(true);
     try {
-      const response = await fetch('https://veriteroyale.onrender.com/auth/reset-password/confirm'+token, {
+      const response = await fetch('https://veriteroyale.onrender.com/auth/reset-password/confirm', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ newPassword: password }),
+        body: JSON.stringify({token, newPassword: password }),
       });
 
       if (response.ok) {

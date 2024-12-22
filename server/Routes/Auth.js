@@ -1,8 +1,9 @@
-const { signup, login, getUsers, usersCount, adminLogin, deleteuser, resetPassword } = require("../controllers/AuthController");
+const { signup, login, getUsers, usersCount, adminLogin, deleteuser, resetPassword, resetPasswordConfirm } = require("../controllers/AuthController");
 const { signupValidation, loginValidation } = require("../middlewares/Authvalidation");
 
 const router = require("express").Router();
 
+router.post("/reset-password/confirm", resetPasswordConfirm)
 router.post("/reset-password", resetPassword)
 router.post("/Login",loginValidation,login)
 router.post("/Regster",signupValidation,signup)

@@ -24,6 +24,7 @@ import ViewFeedback from './component/Admin/ViewFeedback';
 import Services from './component/screen/Services';
 import CustomeProduct from './component/Admin/Customeproduct';
 import Edit from './component/Admin/Edit';
+import ResetPassword from './component/screen/reset-password';
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function RouteWrapper() {
   const user = localStorage.getItem("token")
   // const admin = localStorage.getItem("Admintoken")
   const location = useLocation(); // Get the current route location
-  const hideNavBarRoutes = ['/Login', '/Regster','/Dashboard','/Product','/AdminLogin','/ViewProduct','/ViewUsers','/PurchaseOrder','/ViewFeedback','/Customeproduct','/Checkout','/edit'];
+  const hideNavBarRoutes = ['/Login', '/Regster','/Dashboard','/Product','/AdminLogin','/ViewProduct','/ViewUsers','/PurchaseOrder','/ViewFeedback','/Customeproduct','/Checkout','/edit','/reset-password'];
   // const hideSidenav = ['/Login', '/Regster','/OurWorld','/NewArrivals','/HomeMain','/AdminLogin','/Fragrances'];
 
   const shouldHideNavBar = hideNavBarRoutes.some(route => location.pathname.startsWith(route));
@@ -54,6 +55,7 @@ function RouteWrapper() {
          <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/regster" element={<Regster />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
 
         {user && <Route path="/HomeMain" element={<HomeMain/>}/>}
         <Route path="/OurWorld" element={<OurWorld/>}/>

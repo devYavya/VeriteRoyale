@@ -141,7 +141,7 @@ const login = async(req,res)=>
             user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
             await user.save();
 
-            const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
+            const resetUrl = `https://verite-royale.netlify.app/reset-password/${resetToken}`;
 
             
 
@@ -167,6 +167,46 @@ const login = async(req,res)=>
         } catch (error) {
             res.status(500).json({
                 message: "Error sending password reset email",
+                success: false
+            });
+        }
+    }
+
+    const resetPasswordConfirm = async (req, res) => {
+        try {
+            const { token, newPassword } = req.body;
+
+            // Find user with valid reset token and token not expired
+            const user = await UserModel.findOne({
+                resetPasswordToken: token,
+                resetPasswordExpires: { $gt: Date.now() }
+            });
+
+            if (!user) {
+                return res.status(400).json({
+                    message: "Password reset token is invalid or has expired",
+                    success: false
+                });
+            }
+
+            
+            const salt = await bcrypt.genSalt(10);
+            const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+            
+            user.password = hashedPassword;
+            user.resetPasswordToken = undefined;
+            user.resetPasswordExpires = undefined;
+            await user.save();
+
+            res.status(200).json({
+                message: "Password has been reset successfully",
+                success: true
+            });
+
+        } catch (error) {
+            res.status(500).json({
+                message: "Error resetting password",
                 success: false
             });
         }
@@ -255,5 +295,6 @@ module.exports={
     usersCount,
     adminLogin,
     deleteuser,
-    resetPassword
+    resetPassword,
+    resetPasswordConfirm
 }

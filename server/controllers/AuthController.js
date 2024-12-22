@@ -141,7 +141,7 @@ const login = async(req,res)=>
             user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
             await user.save();
 
-            const resetUrl = `https://verite-royale.netlify.app/reset-password/confirm${resetToken}`;
+            const resetUrl = `https://verite-royale.netlify.app/reset-password/${resetToken}`;
 
             
 

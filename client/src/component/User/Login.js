@@ -95,11 +95,11 @@ function Login ()  {
             alert('Password reset instructions have been sent to your email.');
           } else {
             const errorData = await response.json();
-            alert(`Error: ${errorData.message}`);
+            handleError(`Error: ${errorData.message}`);
           }
         } catch (error) {
-          console.error('Error initiating password reset:', error);
-          alert('Something went wrong. Please try again.');
+          handleError('Error initiating password reset:', error);
+          handleError('Something went wrong. Please try again.');
         }
       };
       

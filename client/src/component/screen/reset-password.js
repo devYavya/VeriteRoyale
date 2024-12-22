@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSearchParams } from 'react-router-dom'; 
+import { useParams } from 'react-router-dom'; 
 import '../style/ResetPassword.css';
 import { handleError, handleSuccess } from '../Utils';
 import { ToastContainer } from 'react-toastify';
@@ -7,8 +7,8 @@ import { ToastContainer } from 'react-toastify';
 
 
 const ResetPassword = () => {
-  const [searchParams] = useSearchParams();
-  const token = searchParams.get('token'); 
+//   const [searchParams] = useSearchParams();
+  const token = useParams();
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -23,12 +23,12 @@ const ResetPassword = () => {
 
     setLoading(true);
     try {
-      const response = await fetch('https://veriteroyale.onrender.com/auth/reset-password/confirm', {
+      const response = await fetch('https://veriteroyale.onrender.com/auth/reset-password/confirm'+token, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token, newPassword: password }),
+        body: JSON.stringify({ newPassword: password }),
       });
 
       if (response.ok) {

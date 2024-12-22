@@ -130,18 +130,18 @@ const login = async(req,res)=>
                     success: false
                 });
             }
-            const resetToken = jwt.sign(
+            const token = jwt.sign(
                 { userId: user._id },
                 process.env.JWTPRIVATEKEY,
                 { expiresIn: '1h' }
             );
 
             
-            user.resetPasswordToken = resetToken;
+            user.resetPasswordToken = token;
             user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
             await user.save();
 
-            const resetUrl = `https://verite-royale.netlify.app/reset-password/${resetToken}`;
+            const resetUrl = `https://verite-royale.netlify.app/reset-password/${token}`;
 
             
 

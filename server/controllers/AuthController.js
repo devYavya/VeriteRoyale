@@ -141,7 +141,7 @@ const login = async(req,res)=>
             user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
             await user.save();
 
-            const resetUrl = `https://verite-royale.netlify.app/reset-password/${resetToken}`;
+            const resetUrl = `https://verite-royale.netlify.app/reset-password/confirm${resetToken}`;
 
             
 
@@ -176,7 +176,6 @@ const login = async(req,res)=>
         try {
             const { token, newPassword } = req.body;
 
-            // Find user with valid reset token and token not expired
             const user = await UserModel.findOne({
                 resetPasswordToken: token,
                 resetPasswordExpires: { $gt: Date.now() }

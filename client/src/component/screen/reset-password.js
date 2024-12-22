@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom'; 
 import '../style/ResetPassword.css';
+import { handleError, handleSuccess } from '../Utils';
+import { ToastContainer } from 'react-toastify';
+
+
 
 const ResetPassword = () => {
   const [searchParams] = useSearchParams();
@@ -28,14 +32,14 @@ const ResetPassword = () => {
       });
 
       if (response.ok) {
-        setMessage('Password reset successful! You can now log in.');
+        handleSuccess('Password reset successful! You can now log in.');
       } else {
         const errorData = await response.json();
-        setMessage(errorData.message || 'Error resetting password.');
+        handleError(errorData.message || 'Error resetting password.');
       }
     } catch (error) {
-      console.error('Error resetting password:', error);
-      setMessage('An error occurred. Please try again.');
+    //   console.error('Error resetting password:', error);
+      handleError('An error occurred. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -71,6 +75,7 @@ const ResetPassword = () => {
           {loading ? 'Resetting...' : 'Reset Password'}
         </button>
       </form>
+      <ToastContainer/>
     </div>
   );
 };

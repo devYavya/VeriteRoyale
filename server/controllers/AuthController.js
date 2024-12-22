@@ -146,11 +146,14 @@ const login = async(req,res)=>
             
 
            const emailContent = `
-                    <h1>Password Reset Request</h1>
-                    <p>Please click on the following link to reset your password:</p>
-                    <a href="${resetUrl}">${resetUrl}</a>
-                    <p>This link will expire in 1 hour.</p>
-                    <p>If you did not request this, please ignore this email.</p>
+                    Password Reset Request
+                    Please click on the following link to reset your password:
+                    ${resetUrl}
+                    This link will expire in 1 hour.
+                    If you did not request this, please ignore this email.
+
+                    Regards,
+                    Team Verite Royale.
                 `;
             
 

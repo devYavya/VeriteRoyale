@@ -174,9 +174,9 @@ const login = async(req,res)=>
     const resetPasswordConfirm = async (req, res) => {
         try {
             const { token, newPassword } = req.body;
-
+            console.log(token);
             const user = await UserModel.findOne({
-                resetPasswordToken: token
+                resetPasswordToken: token.toString()
             });
                 console.log(user);
             if (!user && !jwt.verify(token, process.env.JWTPRIVATEKEY)) {

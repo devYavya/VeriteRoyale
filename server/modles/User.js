@@ -14,6 +14,11 @@ const UserSchema = new Schema({
 	password: {
 		type: String,
 		required: true
+	},
+	resetPasswordToken:
+	{
+		type:String,
+		default: null
 	}
 });
 

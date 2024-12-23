@@ -138,7 +138,6 @@ const login = async(req,res)=>
 
             
             user.resetPasswordToken = token;
-            user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
             await user.save();
 
             const resetUrl = `https://verite-royale.netlify.app/reset-password/${token}`;
@@ -177,11 +176,10 @@ const login = async(req,res)=>
             const { token, newPassword } = req.body;
 
             const user = await UserModel.findOne({
-                resetPasswordToken: token,
-                resetPasswordExpires: { $gt: Date.now() }
+                resetPasswordToken: token
             });
 
-            if (!user) {
+            if (!user && !jwt.verify(token, process.env.JWTPRIVATEKEY)) {
                 return res.status(400).json({
                     message: "Password reset token is invalid or has expired",
                     success: false
@@ -194,8 +192,8 @@ const login = async(req,res)=>
 
             
             user.password = hashedPassword;
-            user.resetPasswordToken = undefined;
-            user.resetPasswordExpires = undefined;
+            user.resetPasswordToken = null;
+            
             await user.save();
 
             res.status(200).json({

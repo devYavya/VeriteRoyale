@@ -178,7 +178,7 @@ const login = async(req,res)=>
             const user = await UserModel.findOne({
                 resetPasswordToken: token
             });
-
+                console.log(user);
             if (!user && !jwt.verify(token, process.env.JWTPRIVATEKEY)) {
                 return res.status(400).json({
                     message: "Password reset token is invalid or has expired",
@@ -202,6 +202,7 @@ const login = async(req,res)=>
             });
 
         } catch (error) {
+            console.log(error);
             res.status(500).json({
                 message: "Error resetting password",
                 success: false

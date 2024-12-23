@@ -136,12 +136,14 @@ function Login ()  {
                 </div>
                
                 <button type="submit" >Login</button>
-                <button className="reset-password-button" onClick={handlePasswordReset}> Reset Password </button>
-
+                {/* <button className="reset-password-button" onClick={handlePasswordReset}> Reset Password </button> */}
+  
+                    <Link to="/"  className="forgetp"  onClick={handlePasswordReset}>Forget Password?</Link>
+                    <Link className='admin' to="/AdminLogin">Admin</Link>
+                
                 <span> Wanna Join us ?
-                    <Link to="/Regster">Register</Link>
+                    <Link to="/Regster" className='reg'>Register</Link>
                 </span>
-                <span><Link to="/AdminLogin">Admin</Link></span>
             </form>
             <ToastContainer/>
         </div>

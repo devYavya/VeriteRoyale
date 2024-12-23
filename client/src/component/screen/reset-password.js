@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom'; 
+import { useNavigate, useParams } from 'react-router-dom'; 
 import '../style/ResetPassword.css';
 import { handleError, handleSuccess } from '../Utils';
 import { ToastContainer } from 'react-toastify';
@@ -13,6 +13,7 @@ const ResetPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handlePasswordReset = async (e) => {
     e.preventDefault();
@@ -33,6 +34,7 @@ const ResetPassword = () => {
 
       if (response.ok) {
         handleSuccess('Password reset successful! You can now log in.');
+        navigate('/Login');
       } else {
         const errorData = await response.json();
         handleError(errorData.message || 'Error resetting password.');

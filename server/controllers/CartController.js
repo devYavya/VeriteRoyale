@@ -144,7 +144,7 @@ const create = async(req, res) =>
             We are pleased to confirm that we have received your order.
 
             Order Details:
-            ${productDetails}
+             ${productDetails}
 
             Total Amount: ₹${totolAmt.toFixed(2)}
             Shipping Address: ${address}

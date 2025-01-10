@@ -61,5 +61,42 @@
   tr:hover {
     background-color: #ddd;
   }
-  
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+    
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+    
+    th, td {
+      padding: 10px;
+      font-size: 14px;
+    }
+    
+    td button {
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .container {
+      padding: 5px;
+      margin-bottom: 20px;
+    }
+    
+    th, td {
+      padding: 8px;
+      font-size: 12px;
+    }
+    
+    td button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
   

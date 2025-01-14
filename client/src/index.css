@@ -11,9 +11,11 @@ body {
 
 body
   {
-       background:linear-gradient(to right, #000000, #4D4855,#000000);
+       /* background:linear-gradient(to right, #acacac, #ffffff,#acacac); */
        /* background:linear-gradient(to right, #D7D7D8, #C7C9CB); */
-  }
+       background:linear-gradient(to right, #acacac,rgb(241, 241, 241),#acacac);
+
+      }
   /* body .ProductTable{
     
     overflow: scroll;

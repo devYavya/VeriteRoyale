@@ -17,7 +17,7 @@
 }
 
 img {
-  height: 100%;
+  height: 10%;
 }
 
 .fragrances-grid {
@@ -27,7 +27,7 @@ img {
 }
 
 .fragrance-card {
-  background: linear-gradient(#4D4855, #A399B2);
+  background: linear-gradient(#A399B2, #353535);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -41,9 +41,10 @@ img {
 }
 
 .fragrance-card img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
+  width: 70%;
+  height: 310px;
+  /* object-fit: ; */
+  margin-left: 15%;
   border-radius: 10px 10px 0 0;
 }
 

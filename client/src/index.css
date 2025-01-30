@@ -13,7 +13,8 @@ body
   {
        /* background:linear-gradient(to right, #acacac, #ffffff,#acacac); */
        /* background:linear-gradient(to right, #D7D7D8, #C7C9CB); */
-       background:linear-gradient(to right, #575757,#acacac);
+       /* background:linear-gradient(to right, #575757,#acacac); */
+       background: linear-gradient(to right, #f5f7fa, #c3cfe2);
 
       }
   /* body .ProductTable{

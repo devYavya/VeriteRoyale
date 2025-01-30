@@ -27,7 +27,9 @@ img {
 }
 
 .fragrance-card {
-  background:  #c3cfe2;
+  /* background:  #c3cfe2; */
+  background: linear-gradient(to left, #f5f7fa, #c3cfe2);
+
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -51,12 +53,12 @@ img {
 .fragrance-card h2 {
   font-size: 18px;
   margin-top: 10px;
-  color :  #27374D;
+  color :  #2c4c79;
 }
 
 .fragrance-card p {
   font-size: 14px;
-  color: white
+  color: rgb(49, 86, 155)
 }
 
 /* Button container for cart and purchase buttons */

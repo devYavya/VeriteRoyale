@@ -20,7 +20,7 @@
   }
   .nav-bar a:hover
   {
-    color: black;
+    /* color: black; */
     text-decoration: wavy;
   }
   .nav-links {

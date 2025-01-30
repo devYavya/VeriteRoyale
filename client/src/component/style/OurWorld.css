@@ -99,16 +99,16 @@
   border-radius: 8px;
   background-color: rgba(58, 82, 115, 0.8); /* Semi-transparent background */
     backdrop-filter: blur(10px);
-    color: #ccc;
+    color: #ffffff;
 
 }
 
 .our-world h1, h2 {
-  color: #ccc;
+  color: #ffffff;
 }
 
 .our-world p {
-  color: #ccc;
+  color: #ffffff;
 }
 
 .our-world .video {

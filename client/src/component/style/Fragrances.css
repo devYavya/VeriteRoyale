@@ -27,7 +27,7 @@ img {
 }
 
 .fragrance-card {
-  background: linear-gradient(#A399B2,#A399B2);
+  background: #9a989b;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -55,7 +55,7 @@ img {
 
 .fragrance-card p {
   font-size: 14px;
-  color: cornsilk;
+  color: white
 }
 
 /* Button container for cart and purchase buttons */

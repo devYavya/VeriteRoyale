@@ -79,10 +79,12 @@
   @media (max-width: 900px) {
     .nav-bar {
       flex-direction: column;
+      background-color: rgba(58, 82, 115, 0.8);
+    backdrop-filter: blur(5px);      
     }
     .nav-links li {
       padding: 10px;
-      text-decoration: none;
+      text-decoration: none; 
     }
     .nav-links {
       display: none;
@@ -93,11 +95,17 @@
       /* backdrop-filter: blur(15px); */
       /* width: 100%; */
       /* padding: 20px; */
+      background-color: rgba(229, 230, 232, 0.8);
+    backdrop-filter: blur(5px);
+    }
+    .nav-links a {
+      color: #2c4c79;
     }
     #right
     {
       margin-top: 150px;
       padding: 0px;
+      width: 15%;
     }
     .nav-links li {
       margin-right: 0;

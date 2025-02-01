@@ -28,7 +28,7 @@ img {
 
 .fragrance-card {
   /* background:  #c3cfe2; */
-  background: linear-gradient(to left, #f5f7fa, #c3cfe2);
+  background: linear-gradient( #f5f7fa, #c3cfe2);
 
   padding: 20px;
   border-radius: 10px;

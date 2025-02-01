@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   height: 100vh;
-  background-color: #ddd;
+  background: linear-gradient( #f5f7fa, #c3cfe2);
   color: #333;
   overflow-y: scroll;
 }
@@ -51,6 +51,8 @@
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #2c4c79;
+
 }
 
 .card p {
@@ -61,7 +63,7 @@
 
 @media (max-width: 768px) {
   .dashboard h1 {
-    font-size: 20px;
+    font-size: 16px;
     margin: 10px 0;
   }
 

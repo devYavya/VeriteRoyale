@@ -20,7 +20,7 @@
   font-size: 1.2em;
   font-weight: bold;
   padding-bottom: 20px;
-  border-bottom: 1px solid #555;
+  border-bottom: 1px solid #ffffff;
 }
 
 .side-nav a {
@@ -34,7 +34,7 @@
 }
 
 .side-nav a:hover {
-  background-color: #555;
+  background-color: #68b0dd;
 }
 
 .ham-menu {

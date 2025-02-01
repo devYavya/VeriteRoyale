@@ -90,7 +90,7 @@ const Dashboard = () => {
           </div>
           <div className="card">
             <h2>Stock</h2>
-            <p>{stock}</p>
+            <p>{stock-Order}</p>
           </div>
           <div className="card">
             <h2>Sale</h2>
@@ -98,7 +98,7 @@ const Dashboard = () => {
           </div>
           <div className="card">
             <h2>Total Value</h2>
-            <p>₹ {totalprice}</p>
+            <p>₹ {totalprice-sale}</p>
           </div>
           <div className="card">
             <h2>Orders</h2>

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Preloader from './component/screen/Preloader';
 import NavBar from './component/screen/Navbar';
-import { BrowserRouter, Routes, Route, useLocation, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './component/screen/Home';
 import Fragrances from './component/screen/Fragrances';
 import Login from './component/User/Login';
@@ -42,7 +42,7 @@ function RouteWrapper() {
   const user = localStorage.getItem("token")
   // const admin = localStorage.getItem("Admintoken")
   const location = useLocation(); // Get the current route location
-  const hideNavBarRoutes = ['/Login', '/Regster','/Dashboard','/Product','/AdminLogin','/ViewProduct','/ViewUsers','/PurchaseOrder','/ViewFeedback','/Customeproduct','/Checkout','/edit','/reset-password'];
+  const hideNavBarRoutes = ['/Login', '/Regster','/Dashboard','/Product','/AdminLogin','/ViewProduct','/ViewUsers','/PurchaseOrder','/ViewFeedback','/Customeproduct','/Checkout','/edit','/reset-password','/*'];
   // const hideSidenav = ['/Login', '/Regster','/OurWorld','/NewArrivals','/HomeMain','/AdminLogin','/Fragrances'];
 
   const shouldHideNavBar = hideNavBarRoutes.some(route => location.pathname.startsWith(route));

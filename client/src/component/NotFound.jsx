@@ -3,7 +3,7 @@ import './Notfound.css'
 
 function NotFound() {
   return (
-    <div>
+    <div className='notfound'>
       <img src='./notfound.png' alt="404" />
     </div>
   )

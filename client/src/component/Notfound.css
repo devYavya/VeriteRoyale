@@ -1,5 +1,13 @@
-img{
+.notfound {
     /* align-items: center; */
     justify-content: center;
     margin-left: 500px;
+}
+
+@media (max-width: 768px) {
+    .notfound {
+    
+        margin-left: 40px;
+        justify-content: center;
+    }
 }

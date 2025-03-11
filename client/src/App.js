@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Preloader from './component/screen/Preloader';
 import NavBar from './component/screen/Navbar';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Link } from 'react-router-dom';
 import Home from './component/screen/Home';
 import Fragrances from './component/screen/Fragrances';
 import Login from './component/User/Login';
@@ -25,6 +25,7 @@ import Services from './component/screen/Services';
 import CustomeProduct from './component/Admin/Customeproduct';
 import Edit from './component/Admin/Edit';
 import ResetPassword from './component/screen/reset-password';
+import NotFound from './component/NotFound';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function RouteWrapper() {
         {!shouldHideNavBar && <NavBar />}
         {/* {!shouldHideSidenav && <Sidenav/>} */}
       <Routes>
+        <Route path="*" element={<NotFound />} />
          <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/regster" element={<Regster />} />
